@@ -18,8 +18,8 @@ export default function Navbar() {
           <Link href="https://flowbite.com/" className="flex items-center">
             <img
               src={require("./../assets/images/logo.png")}
-              className="h-8 mr-3"
-              alt="Flowbite Logo"
+              className="h-8 lg:h-9 md:h-9"
+              alt="open book Logo"
             />
           </Link>
 
@@ -127,7 +127,7 @@ export default function Navbar() {
           </div>
 
           <div
-            className="search-bar items-center  justify-between hidden md:flex md:w-auto md:order-1  px-4 py-2 border rounded-xl sm:w-full "
+            className="search-bar items-center  justify-between hidden md:flex md:order-1  px-4 py-2 border rounded-xl sm:w-full md:w-full mt-3 lg:mt-0 md:mt-0 "
             id="mobile-menu-2"
           >
             {/* search items  */}

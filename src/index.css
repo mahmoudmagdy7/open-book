@@ -67,8 +67,14 @@ body {
   border-radius: 8px;
   font-size: 14px;
 }
-
+/* mobile  */
 @media screen and (max-width: 640px) {
+  .search-bar {
+    width: 100% !important;
+  }
+}
+/* tablet  */
+@media screen and (max-width: 767.5px) {
   .search-bar {
     width: 100% !important;
   }
