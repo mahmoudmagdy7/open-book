@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className=" text-start">
+    <footer className=" text-start bg-gray-50 text-base">
       <div className="container m-auto">
         <div className=" grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 py-8 gap-6 ">
           <div className="col-1 px-4">
@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <div>
-              <p className="mt-4 leading-relaxed ">
+              <p className="mt-4 leading-relaxed  ">
                 مبادرة ض ثم تسجيلها بشكل رسمي كمنظمة تطوعية غير ربحية في
                 ألمانيا. حيث كان الدافع الأول لذلك هو نقص المحتوى العربي
                 الإلكتروني وضعفه في المجالات المعرفية المختلفة، حيث سعت المبادرة
@@ -26,7 +26,7 @@ export default function Footer() {
               </p>
             </div>
             <div>
-              <h2 className="font-bold text-xl mt-4">تابعنا</h2>
+              <h2 className="font-bold text-xl  mt-4">تابعنا</h2>
               <div className="social-icons flex mt-4">
                 <div className="icon text-xl border rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-700 hover:bg-blue-100">
                   <i className="fa-brands fa-facebook-f"></i>
