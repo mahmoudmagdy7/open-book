@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+:root {
+  /* initial the main colors */
+  --c-Primary: #6c5dd3;
+  --c-Primary-Soft: #f0eeff;
+  --c-DarkPurple: #11142d;
+  --c-Orange: #ff754c;
+  --c-White: #fff;
+  --c-Grey-01: #aaaaaa;
+  --c-Grey-02: #e1e1e1;
+  --c-Grey-03: #f0f0f0;
+  /* initial the main assets */
+  --shadow-03: 0px 25px 33px rgba(255, 255, 255, 0.25);
+  --shadow-02: 0px 25px 33px rgba(108, 93, 211, 0.25);
+  --shadow-01: 0px 29px 39px rgba(0, 0, 0, 0.01);
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  direction: rtl !important;
+  color: var(--main-color);
+}
+
+/* main classes  */
+.shadow-03 {
+  box-shadow: 0px 25px 33px rgba(255, 255, 255, 0.25);
+}
+.shadow-02 {
+  box-shadow: 0px 25px 33px rgba(108, 93, 211, 0.25);
+}
+.shadow-01 {
+  box-shadow: 0px 29px 39px rgba(0, 0, 0, 0.01);
+}
+
+.c-primary {
+  color: var(--c-Primary) !important;
+}
+
+/* Navbar */
+.search-bar {
+  width: 50% !important;
+}
+
+.search-bar svg {
+  color: var(--c-Primary) !important;
+  width: 12px;
+}
+
+/* components  */
+.btn-primary {
+  color: var(--c-White);
+  background-color: var(--c-Primary);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary-soft {
+  color: var(--c-Primary);
+  background-color: var(--c-Primary-Soft);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  .search-bar {
+    width: 100% !important;
+  }
+}
