@@ -18,7 +18,9 @@
   --shadow-02: 0px 25px 33px rgba(108, 93, 211, 0.25);
   --shadow-01: 0px 29px 39px rgba(0, 0, 0, 0.01);
 }
-
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 body {
   font-family: "Cairo", sans-serif;
   direction: rtl !important;

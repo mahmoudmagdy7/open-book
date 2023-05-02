@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className=" text-start bg-gray-50 text-base">
+    <footer className=" text-start text-base">
       <div className="container m-auto">
         <div className=" grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 py-8 gap-6 ">
           <div className="col-1 px-4">
@@ -26,21 +26,21 @@ export default function Footer() {
               </p>
             </div>
             <div>
-              <h2 className="font-bold text-xl  mt-4">تابعنا</h2>
+              <h2 className="font-bold text-lg  mt-4">تابعنا</h2>
               <div className="social-icons flex mt-4">
-                <div className="icon text-xl border rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-700 hover:bg-blue-100">
+                <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-700 hover:bg-blue-100">
                   <i className="fa-brands fa-facebook-f"></i>
                 </div>
-                <div className="icon text-xl border rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-red-600 hover:bg-red-100">
+                <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-red-600 hover:bg-red-100">
                   <i className="fa-brands fa-youtube"></i>
                 </div>
-                <div className="icon text-xl border rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-500 hover:bg-blue-50">
+                <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-500 hover:bg-blue-50">
                   <i className="fa-brands fa-twitter"></i>
                 </div>
-                <div className="icon text-xl border rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-700 hover:bg-gray-200">
+                <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-700 hover:bg-gray-200">
                   <i className="fa-brands fa-linkedin"></i>
                 </div>
-                <div className="icon text-xl border rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-rose-600 hover:bg-rose-100">
+                <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-rose-600 hover:bg-rose-100">
                   <i className="fa-brands fa-instagram"></i>
                 </div>
               </div>

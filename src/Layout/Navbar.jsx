@@ -14,8 +14,8 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white border-gray-200 fixed start-0 end-0">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link href="https://flowbite.com/" className="flex items-center">
+        <div className=" flex flex-wrap items-center justify-between mx-auto  container p-4">
+          <Link to="/" className="flex items-center">
             <img
               src={require("./../assets/images/logo.png")}
               className="h-8 lg:h-9 md:h-9"
@@ -27,12 +27,9 @@ export default function Navbar() {
             {/* profile shown when user is logged in */}
             {/* ======================================== */}
             <button
-              type="button"
-              className=" hidden mr-3 text-sm bg-gray-300 rounded-lg md:mr-0 focus:ring-1 focus:ring-gray-300 dark:focus:ring-gray-200"
+              className=" hidden mr-3 text-sm bg-gray-300 rounded-lg md:mr-0 focus:ring-1 focus:ring-gray-300"
               id="user-menu-button"
-              aria-expanded="false"
               data-dropdown-toggle="user-dropdown"
-              data-dropdown-placement="bottom"
             >
               <span className="sr-only">Open user menu</span>
               <img
@@ -42,14 +39,14 @@ export default function Navbar() {
               />
             </button>
             <div
-              className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+              className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow "
               id="user-dropdown"
             >
               <div className="px-4 py-3">
-                <span className="block text-sm text-gray-900 dark:text-white">
+                <span className="block text-sm text-gray-900 ">
                   Bonnie Green
                 </span>
-                <span className="block text-sm  text-gray-500 truncate dark:text-gray-400">
+                <span className="block text-sm  text-gray-500 truncate ">
                   name@flowbite.com
                 </span>
               </div>
@@ -57,7 +54,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     to="/"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
                   >
                     Dashboard
                   </Link>
@@ -65,7 +62,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     to="/"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Settings
                   </Link>
@@ -73,7 +70,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     to="/"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Earnings
                   </Link>
@@ -81,7 +78,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     to="/"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
                   >
                     Sign out
                   </Link>
@@ -103,10 +100,10 @@ export default function Navbar() {
               </button>
             </div>
             <button
-              data-collapse-toggle="mobile-menu-2"
+              data-collapse-toggle="mobile-menu"
               type="button"
-              className="inline-flex items-center p-2 ms-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-50 dark:text-gray-400 dark:hover:bg-gray-100 dark:focus:ring-gray-300"
-              aria-controls="mobile-menu-2"
+              className="inline-flex items-center p-2 ms-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-50"
+              aria-controls="mobile-menu"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -117,22 +114,18 @@ export default function Navbar() {
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
-                ></path>
+                <path d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"></path>
               </svg>
             </button>
           </div>
 
           <div
             className="search-bar items-center  justify-between hidden md:flex md:order-1  px-4 py-2 border rounded-xl sm:w-full md:w-full mt-3 lg:mt-0 md:mt-0 "
-            id="mobile-menu-2"
+            id="mobile-menu"
           >
             {/* search items  */}
 
-            <div class="w-full h-5 flex justify-between text-sm c-primary">
+            <div className="w-full h-5 flex justify-between text-sm c-primary">
               {/* search menu items */}
               <div className="menu flex items-center border-e  pe-2 cursor-pointer">
                 <img
@@ -140,13 +133,13 @@ export default function Navbar() {
                   src={require("../assets/icons/menu 1.png")}
                   alt="main menu button"
                 />
-                <h6 className="c-rimary me-1">القائمة</h6>
+                <h6 className=" me-1">القائمة</h6>
                 <i className="fa-solid fa-chevron-down "></i>
               </div>
               {/* search input  */}
               <input
                 className=" flex-grow focus:outline-none ps-2"
-                type="search"
+                type="text"
                 placeholder="ابحث في اكبر مكتبه عربيه حرة "
               />
               {/* search icon  */}
