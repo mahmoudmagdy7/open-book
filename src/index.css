@@ -85,6 +85,11 @@ body {
   border-radius: 8px;
   font-size: 14px;
 }
+
+.book-cover {
+  aspect-ratio: 4.2/6;
+  width: 100%;
+}
 /* mobile  */
 @media screen and (max-width: 640px) {
   .search-bar {

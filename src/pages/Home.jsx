@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BookCard from "../components/BookCard";
+import axios from "axios";
 
 export default function Home() {
+  const [books, setBooks] = useState([]);
+  async function getAllBooks() {
+    try {
+      const { data } = await axios.get(
+        "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=0R2GrF9ih9t8HX3X8q3ZA2k3AZ09QNCX"
+      );
+      console.log(data.results.books);
+      setBooks(data.results.books);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(function () {
+    getAllBooks();
+  }, []);
   return (
     <>
       <main className=" pt-20 pb-3">
@@ -84,34 +101,9 @@ export default function Home() {
             </div>
 
             <div className="books grid lg:grid-cols-4 md:grid-cols-4 grid-cols-2 sm:grid-cols-4 md my-5 gap-4">
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
+              {books?.map((book) => {
+                return <BookCard books={book} />;
+              })}
             </div>
           </section>
         </div>
