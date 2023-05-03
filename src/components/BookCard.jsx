@@ -1,10 +1,9 @@
 import React from "react";
 
 export default function BookCard({ books }) {
-  console.log(books);
   return (
     <>
-      <div className="border rounded-md p-5 text-center">
+      <div className="border rounded-md p-5 text-center book">
         <img src={books?.book_image} alt="" className="book-cover rounded-xl" />
         <h3 className="text-lg font-bold my-2">{books?.title}</h3>
         <div className="tags c-primary flex items-center justify-center">

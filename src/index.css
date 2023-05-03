@@ -90,6 +90,10 @@ body {
   aspect-ratio: 4.2/6;
   width: 100%;
 }
+
+.list-view .book {
+  display: flex;
+}
 /* mobile  */
 @media screen and (max-width: 640px) {
   .search-bar {
