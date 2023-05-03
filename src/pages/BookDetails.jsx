@@ -1,63 +1,72 @@
 import React from "react";
-import logo1 from '../assets/images/placeholder.png'
+import logo1 from '../assets/icons/Rectangle 13.svg'
+import logo2 from '../assets/icons/Rectangle 14.svg'
+import line from '../assets/icons/divider.png'
+import { Link } from "react-router-dom";
 export default function BookDetails() {
-  return <>
-      <div className="pt-20 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2">
+    return <>
+        <div className="pt-24 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2">
 
 
-<aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
-    <img className="w-full  m-auto" src={logo1} alt=""/>
-</aside>
+            <aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
+                <img className="w-full  m-auto" src={require('../assets/images/book.png')} alt="" />
+            </aside>
 
-<main className=" col-span-6 lg:col-span-5  p-10 bg-cyan-500">
-    <h1 className=" text-2xl">عنوان الكتاب</h1>
+            <main className=" col-span-6 lg:col-span-5  p-10">
 
-    <div className="rating text-start flex  mt-5">
+                <h1 className=" text-3xl flex">عنوان الكتاب</h1>
 
-        <div className="star-outer relative me-1 ">
-            <div className="star-inner absolute top-0"></div>
+                <div className="rating text-start flex  mt-5">
+
+                    <div className="star-outer relative me-1 ">
+                        <div className="star-inner absolute top-0"></div>
+                    </div>
+                    <div className="star-outer relative me-1 ">
+                        <div className="star-inner absolute top-0"></div>
+                    </div>
+                    <div className="star-outer relative me-1 ">
+                        <div className="star-inner absolute top-0"></div>
+                    </div>
+                    <div className="star-outer relative me-1 ">
+                        <div className="star-inner absolute top-0"></div>
+                    </div>
+                    <div className="star-outer relative  ">
+
+                    </div>
+
+                    <span className=" relative ms-5"> 4.0 </span>
+                </div>
+
+                <p className="pt-2 text-start  ">
+                    تلخص هذه المقولة ما تسعى مبادرة ض القيام به منذ تأسيسها ثم تسجيلها بشكل رسمي كمنظمة تطوعية غير ربحية في ألمانيا. حيث كان الدافع الأول لذلك هو نقص المحتوى العربي الإلكتروني وضعفه في المجالات المعرفية المختلفة، حيث سعت المبادرة إلى سد جزء يسير من هذا النقص عبر الموسوعة الحرة الأهم، موسوعة ويكيبيديا العربية، عبر مسابقة ض الويكيبيدية منذ العام 2015. ثم أضافت لأنشطتها إثراء المحتوى الخاص بالأطفال عبر مشروع حكايات ض منذ العام 2019، الذي أنتج أكثر من 100 قصة عالية الجودة للأطفال بالعربية، نشرناها للفائدة.
+
+                    وفي عامها الخامس، توسع النشاط ليشمل تأليف القصة القصيرة، عبر مسابقة حروف حرة في العام 2020. وبعد التركيز على الأمور التقنية وتطويرها في العام 2021 والذي نُشر فيه تطبيق حكايات ض 1 على متجر غوغل، كانت النقلة من الترجمة إلى التأليف بتركيز على أدب الطفل من خلال المشروع الكبير، مشروع حكايات ض 2 المستمر طيلة عام 2022.
+                </p>
+
+                <div className=" flex  justify-between mt-5">
+
+                    <div className=" relative ms-auto">
+                        <Link ><img className=" " src={logo2} alt="عرض تفاصيل الكتاب" />  </Link>
+                    </div>
+
+                    <div className=" relative ms-5">
+                        <Link ><img className="" src={logo1} alt="تحميل الكتاب" />  </Link>
+                    </div>
+
+
+                </div>
+
+                <div className=" flex mt-5">
+                        <img src={line} alt="" />
+                </div>
+
+
+
+            </main>
+
+
+
         </div>
-        <div className="star-outer relative me-1 ">
-            <div className="star-inner absolute top-0"></div>
-        </div>
-        <div className="star-outer relative me-1 ">
-            <div className="star-inner absolute top-0"></div>
-        </div>
-        <div className="star-outer relative me-1 ">
-            <div className="star-inner absolute top-0"></div>
-        </div>
-        <div className="star-outer relative  ">
 
-        </div>
-
-        <span className="relative ms-5"> 4.0 </span>
-    </div>
-
-    <p className="pt-2">﴿یَوۡمَ یَقُولُ ٱلۡمُنَـٰفِقُونَ وَٱلۡمُنَـٰفِقَـٰتُ لِلَّذِینَ ءَامَنُوا۟ ٱنظُرُونَا
-        نَقۡتَبِسۡ مِن نُّورِكُمۡ قِیلَ ٱرۡجِعُوا۟ وَرَاۤءَكُمۡ فَٱلۡتَمِسُوا۟ نُورࣰاۖ فَضُرِبَ بَیۡنَهُم
-        بِسُورࣲ لَّهُۥ بَابُۢ بَاطِنُهُۥ فِیهِ ٱلرَّحۡمَةُ وَظَـٰهِرُهُۥ مِن قِبَلِهِ ٱلۡعَذَابُ ۝١٣
-        یُنَادُونَهُمۡ أَلَمۡ نَكُن مَّعَكُمۡۖ قَالُوا۟ بَلَىٰ وَلَـٰكِنَّكُمۡ فَتَنتُمۡ أَنفُسَكُمۡ
-        وَتَرَبَّصۡتُمۡ وَٱرۡتَبۡتُمۡ وَغَرَّتۡكُمُ ٱلۡأَمَانِیُّ حَتَّىٰ جَاۤءَ أَمۡرُ ٱللَّهِ وَغَرَّكُم
-        بِٱللَّهِ
-
-        <br/>
-
-        ﴿۞ إِنَّ رَبَّكَ یَعۡلَمُ أَنَّكَ تَقُومُ أَدۡنَىٰ مِن ثُلُثَیِ ٱلَّیۡلِ وَنِصۡفَهُۥ وَثُلُثَهُۥ
-        وَطَاۤىِٕفَةࣱ مِّنَ ٱلَّذِینَ مَعَكَۚ وَٱللَّهُ یُقَدِّرُ ٱلَّیۡلَ وَٱلنَّهَارَۚ عَلِمَ أَن لَّن
-        تُحۡصُوهُ فَتَابَ عَلَیۡكُمۡۖ فَٱقۡرَءُوا۟ مَا تَیَسَّرَ مِنَ ٱلۡقُرۡءَانِۚ عَلِمَ أَن سَیَكُونُ مِنكُم
-        مَّرۡضَىٰ وَءَاخَرُونَ یَضۡرِبُونَ فِی ٱلۡأَرۡضِ یَبۡتَغُونَ مِن فَضۡلِ ٱللَّهِ وَءَاخَرُونَ
-        یُقَـٰتِلُونَ فِی سَبِیلِ ٱللَّهِۖ فَٱقۡرَءُوا۟ مَا تَیَسَّرَ مِنۡهُۚ وَأَقِیمُوا۟ ٱلصَّلَوٰةَ
-        وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَقۡرِضُوا۟ ٱللَّهَ قَرۡضًا حَسَنࣰاۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنۡ
-        خَیۡرࣲ تَجِدُوهُ عِندَ ٱللَّهِ هُوَ خَیۡرࣰا وَأَعۡظَمَ أَجۡرࣰاۚ وَٱسۡتَغۡفِرُوا۟ ٱللَّهَۖ إِنَّ ٱللَّهَ
-        غَفُورࣱ رَّحِیمُۢ﴾
-
-
-    </p>
-</main>
-
-
-
-</div>
-
-  </>;
+    </>;
 }

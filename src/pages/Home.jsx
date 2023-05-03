@@ -1047,7 +1047,7 @@ export default function Home() {
             <h2 className="text-3xl font-semibold">الاقسام</h2>
             <ul className="border rounded-lg mt-5 py-4 px-5">
               <li className="font-semibold">
-                <Link> علوم</Link>
+                <Link > علوم</Link>
               </li>
               <li className="font-semibold mt-2">
                 <Link> رياضة</Link>
