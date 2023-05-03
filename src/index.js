@@ -8,6 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 import '@fortawesome/fontawesome-free/js/all'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <App />
 
 );

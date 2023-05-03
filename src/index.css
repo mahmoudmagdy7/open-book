@@ -52,6 +52,22 @@ body {
   width: 12px;
 }
 
+.star-outer::after {
+  content: "\f005";
+  width: 20px;
+  height: 20px;
+  font-weight: 600;
+  color: var(--c-Grey-01);
+  font-family: "Font Awesome 6 free";
+}
+.star-inner::after {
+  content: "\f005";
+  width: 20px;
+  height: 20px;
+  font-weight: 600;
+  color: var(--c-Orange);
+  font-family: "Font Awesome 6 free";
+}
 /* components  */
 .btn-primary {
   color: var(--c-White);
