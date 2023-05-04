@@ -1040,14 +1040,14 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main className=" pt-20 pb-3">
+      <main className=" pb-3">
         <div className="grid grid-cols-12 gap-x-6  mx-auto max-w-screen-2xl ">
           {/* right section  */}
           <section className=" col-span-2  col-start-2 text-start hidden lg:block md:block">
             <h2 className="text-3xl font-semibold">الاقسام</h2>
             <ul className="border rounded-lg mt-5 py-4 px-5">
               <li className="font-semibold">
-                <Link > علوم</Link>
+                <Link> علوم</Link>
               </li>
               <li className="font-semibold mt-2">
                 <Link> رياضة</Link>
@@ -1123,8 +1123,8 @@ export default function Home() {
               id="books-container"
               className=" grid  md:grid-cols-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 my-5 gap-4"
             >
-              {books?.map((book) => {
-                return <BookCard books={book} />;
+              {books?.map((book, index) => {
+                return <BookCard key={index} books={book} />;
               })}
             </div>
           </section>

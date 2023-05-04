@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 export default function BookDetails() {
   return (
     <>
-      <bookPage className="py-24 px-10 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-5">
-        <bookCover className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
+      <section className="mt-5 px-10 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-5">
+        <figure className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
           <img
             className="w-full  m-auto"
             src={require("../assets/images/book.png")}
             alt=""
           />
-        </bookCover>
+        </figure>
 
-        <bookDetails className=" col-span-6 lg:col-span-5">
+        <div className=" col-span-6 lg:col-span-5">
           <h1 className=" text-3xl flex">عنوان الكتاب</h1>
 
           <div className="rating text-start flex  mt-5">
@@ -70,8 +70,8 @@ export default function BookDetails() {
           <div className=" flex mt-5">
             <img src={line} alt="" />
           </div>
-        </bookDetails>
-      </bookPage>
+        </div>
+      </section>
     </>
   );
 }
