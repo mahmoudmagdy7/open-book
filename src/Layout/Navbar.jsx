@@ -14,6 +14,10 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white border-gray-200 fixed z-50 start-0 end-0">
+        <div className=" py-px bg-slate-100 flex justify-center items-center c-primary">
+          <p>نسخة تجريبية</p>
+          <span className=" mx-2 fa-solid fa-terminal"></span>
+        </div>
         <div className="container mx-auto ">
           <div className=" flex flex-wrap items-center justify-between mx-auto  max-w-screen-xl  p-4">
             <Link to="/" className="flex items-center">
