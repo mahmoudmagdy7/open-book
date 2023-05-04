@@ -106,3 +106,14 @@ body {
     width: 100% !important;
   }
 }
+
+/* btn book-details */
+
+
+.btnDet{
+
+  width: 213px;
+  height: 50px;
+  background: #EBE8FE;
+  border-radius: 14px;
+}
