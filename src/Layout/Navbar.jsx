@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 export default function Navbar() {
+  function toggleNav() {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.toggle("hidden");
+  }
+
   useEffect(function () {
     window.onscroll = function () {
       if (window.scrollY > 20) {
@@ -13,7 +18,11 @@ export default function Navbar() {
   }, []);
   return (
     <>
-      <nav className="bg-white border-gray-200 fixed z-50 start-0 end-0">
+      <nav className="bg-white border-gray-200 sticky z-50 top-0">
+        <div className=" py-px bg-slate-100 flex justify-center items-center c-primary">
+          <p>نسخة تجريبية</p>
+          <span className=" mx-2 fa-solid fa-terminal"></span>
+        </div>
         <div className="container mx-auto ">
           <div className=" flex flex-wrap items-center justify-between mx-auto  max-w-screen-xl  p-4">
             <Link to="/" className="flex items-center">
@@ -100,7 +109,8 @@ export default function Navbar() {
                 </button>
               </div>
               <button
-                data-collapse-toggle="mobile-menu"
+                // data-collapse-toggle="mobile-menu"
+                onClick={toggleNav}
                 className="inline-flex items-center p-2 ms-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-50"
               >
                 <span className="sr-only">Open main menu</span>

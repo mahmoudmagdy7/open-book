@@ -22,6 +22,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 body {
+  color: var(--c-DarkPurple) !important;
   font-family: "Cairo", sans-serif;
   direction: rtl !important;
   color: var(--main-color);
@@ -40,6 +41,9 @@ body {
 
 .c-primary {
   color: var(--c-Primary) !important;
+}
+.bg-primary {
+  background-color: var(--c-Primary);
 }
 
 /* Navbar */
