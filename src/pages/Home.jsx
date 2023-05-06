@@ -6,6 +6,9 @@ import axios from "axios";
 import gridViewIcon from "../assets/icons/gridView.svg";
 import listViewIcon from "../assets/icons/open-menu.svg";
 import sideBarViewIcon from "../assets/icons/sidebarView.svg";
+import PaginatedItems from "../components/pagination";
+// import testSvg from "https://downloads.hindawi.org/covers/svg/270x360/80626160.svg";
+
 export default function Home() {
   const [books, setBooks] = useState([
     {
@@ -1023,21 +1026,8 @@ export default function Home() {
     );
     console.log("list view acitvated");
   }
-  // async function getAllBooks() {
-  //   try {
-  //     const { data } = await axios.get(
-  //       "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=0R2GrF9ih9t8HX3X8q3ZA2k3AZ09QNCX"
-  //     );
-  //     console.log(data.results.books);
-  //     // setBooks(data.results.books);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
-  useEffect(function () {
-    // getAllBooks();
-  }, []);
+  useEffect(function () {}, []);
   return (
     <>
       <main className=" pb-3">
@@ -1089,7 +1079,7 @@ export default function Home() {
                 <div className="flex items-center grow justify-start ms-2">
                   <button className="view-button pe-1">
                     <img
-                      onClick={listView}
+                      // onClick={listView}
                       className="h-5 w-5"
                       src={listViewIcon}
                       alt=" list view "
@@ -1119,13 +1109,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div
-              id="books-container"
-              className=" grid  md:grid-cols-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 my-5 gap-4"
-            >
-              {books?.map((book, index) => {
-                return <BookCard key={index} books={book} />;
-              })}
+            <div id="books-container" className="">
+              <PaginatedItems itemsPerPage={16} />
             </div>
           </section>
         </div>

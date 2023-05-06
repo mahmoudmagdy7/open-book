@@ -3,10 +3,8 @@ import line from "../assets/icons/divider.png";
 import whatsapp from "../assets/icons/x30 8.Whatsapp.svg";
 import Facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
-import gmail from "../assets/icons/Email.svg";
 
 import { Link } from "react-router-dom";
-import BookCard from './../components/BookCard';
 
 export default function BookDetails() {
   return (
@@ -149,12 +147,7 @@ export default function BookDetails() {
           </div>
 
           {/*  END social media icons  */}
-
-
         </main>
-
-
-        
       </div>
     </>
   );
