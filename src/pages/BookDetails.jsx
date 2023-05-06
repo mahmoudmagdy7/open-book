@@ -3,7 +3,8 @@ import line from "../assets/icons/divider.png";
 import whatsapp from "../assets/icons/x30 8.Whatsapp.svg";
 import Facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
-
+import download from "../assets/icons/download.svg";
+import show from "../assets/icons/show.svg";
 import { Link } from "react-router-dom";
 
 export default function BookDetails() {
@@ -20,74 +21,73 @@ export default function BookDetails() {
         </aside>
         {/*  Start BOOK  DETAILS */}
 
-        <main className=" col-span-6 lg:col-span-5  p-10">
-          <h1 className=" text-3xl flex">عنوان الكتاب</h1>
+        <main className=" col-span-6 lg:col-span-5  py-10 ">
+          <div className="px-5">
+            {" "}
+            <h1 className=" text-3xl flex">عنوان الكتاب</h1>
+            {/*  Start STAR  ICON */}
+            {/*  END  STAR  ICON */}
+            <p className="pt-5 text-start  ">
+              تلخص هذه المقولة ما تسعى مبادرة ض القيام به منذ تأسيسها ثم تسجيلها
+              بشكل رسمي كمنظمة تطوعية غير ربحية في ألمانيا. حيث كان الدافع الأول
+              لذلك هو نقص المحتوى العربي الإلكتروني وضعفه في المجالات المعرفية
+              المختلفة، حيث سعت المبادرة إلى سد جزء يسير من هذا النقص عبر
+              الموسوعة الحرة الأهم، موسوعة ويكيبيديا العربية، عبر مسابقة ض
+              الويكيبيدية منذ العام 2015. ثم أضافت لأنشطتها إثراء المحتوى الخاص
+              بالأطفال عبر مشروع حكايات ض منذ العام 2019، الذي أنتج أكثر من 100
+              قصة عالية الجودة للأطفال بالعربية، نشرناها للفائدة. وفي عامها
+              الخامس، توسع النشاط ليشمل تأليف القصة القصيرة، عبر مسابقة حروف حرة
+              في العام 2020. وبعد التركيز على الأمور التقنية وتطويرها في العام
+              2021 والذي نُشر فيه تطبيق حكايات ض 1 على متجر غوغل، كانت النقلة من
+              الترجمة إلى التأليف بتركيز على أدب الطفل من خلال المشروع الكبير،
+              مشروع حكايات ض 2 المستمر طيلة عام 2022.
+            </p>
+            {/*  Start BTN BOOK */}
+            <div className=" flex justify-end gap-3 mt-5">
+              {/* <div className="rating text-start flex  mt-5">
+              <div className="star-outer relative me-1 ">
+                <div className="star-inner absolute top-0"></div>
+              </div>
+              <div className="star-outer relative me-1 ">
+                <div className="star-inner absolute top-0"></div>
+              </div>
+              <div className="star-outer relative me-1 ">
+                <div className="star-inner absolute top-0"></div>
+              </div>
+              <div className="star-outer relative me-1 ">
+                <div className="star-inner absolute top-0"></div>
+              </div>
+              <div className="star-outer relative  "></div>
 
-          {/*  Start STAR  ICON */}
+              <span className=" relative ms-5"> 4.0 </span>
+            </div> */}
+              <div className=" relative ">
+                <Link>
+                  <button
+                    type="button"
+                    className=" c-primary bg-[#EBE8FE] inline-flex items-center font-bold rounded-lg text-sm px-3 py-2.5 text-center "
+                  >
+                    <span>عرض الكتاب</span>
+                    <span className="fa-regular fa-eye ms-2 "></span>
+                  </button>
+                </Link>
+              </div>
 
-          <div className="rating text-start flex  mt-5">
-            <div className="star-outer relative me-1 ">
-              <div className="star-inner absolute top-0"></div>
+              <div className=" relative ">
+                <Link>
+                  <button
+                    type="button"
+                    className="text-green-500 bg-[#DDF5E4] font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+                  >
+                    <span>تحميل الكتاب</span>
+                    <span class="fa-solid fa-arrow-down ms-2"></span>{" "}
+                  </button>
+                </Link>
+              </div>
             </div>
-            <div className="star-outer relative me-1 ">
-              <div className="star-inner absolute top-0"></div>
-            </div>
-            <div className="star-outer relative me-1 ">
-              <div className="star-inner absolute top-0"></div>
-            </div>
-            <div className="star-outer relative me-1 ">
-              <div className="star-inner absolute top-0"></div>
-            </div>
-            <div className="star-outer relative  "></div>
-
-            <span className=" relative ms-5"> 4.0 </span>
+            {/*  END BTN BOOK */}
           </div>
-
-          {/*  END  STAR  ICON */}
-
-          <p className="pt-2 text-start  ">
-            تلخص هذه المقولة ما تسعى مبادرة ض القيام به منذ تأسيسها ثم تسجيلها
-            بشكل رسمي كمنظمة تطوعية غير ربحية في ألمانيا. حيث كان الدافع الأول
-            لذلك هو نقص المحتوى العربي الإلكتروني وضعفه في المجالات المعرفية
-            المختلفة، حيث سعت المبادرة إلى سد جزء يسير من هذا النقص عبر الموسوعة
-            الحرة الأهم، موسوعة ويكيبيديا العربية، عبر مسابقة ض الويكيبيدية منذ
-            العام 2015. ثم أضافت لأنشطتها إثراء المحتوى الخاص بالأطفال عبر مشروع
-            حكايات ض منذ العام 2019، الذي أنتج أكثر من 100 قصة عالية الجودة
-            للأطفال بالعربية، نشرناها للفائدة. وفي عامها الخامس، توسع النشاط
-            ليشمل تأليف القصة القصيرة، عبر مسابقة حروف حرة في العام 2020. وبعد
-            التركيز على الأمور التقنية وتطويرها في العام 2021 والذي نُشر فيه
-            تطبيق حكايات ض 1 على متجر غوغل، كانت النقلة من الترجمة إلى التأليف
-            بتركيز على أدب الطفل من خلال المشروع الكبير، مشروع حكايات ض 2
-            المستمر طيلة عام 2022.
-          </p>
-
           {/*  END BOOK  DETAILS */}
-
-          {/*  Start BTN BOOK */}
-
-          <div className=" flex  justify-between mt-5">
-            <div className=" relative ms-auto">
-              <Link>
-                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                  <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-slate-300 rounded-md group-hover:bg-opacity-0">
-                    عرض تفاصيل الكتاب
-                  </span>
-                </button>
-              </Link>
-            </div>
-
-            <div className=" relative ms-5">
-              <Link>
-                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800">
-                  <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-stone-300 rounded-md group-hover:bg-opacity-0">
-                    تحميل الكتاب
-                  </span>
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/*  END BTN BOOK */}
 
           {/*  Start LINE BOOK */}
 
@@ -98,18 +98,18 @@ export default function BookDetails() {
 
           {/*  Start social media icons  */}
 
-          <div className=" flex    mt-5">
+          <div className="mt-5 justify-start flex mobileW items-center gap-2">
             <button
               type="button"
-              class="text-white bg-[#1E33E5] hover:bg-[#1E33E5]/90 focus:ring-4 focus:outline-none focus:ring-[#1E33E5]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
+              className="text-white bg-[#1E33E5] hover:bg-[#1E33E5]/90 focus:ring-4 focus:outline-none focus:ring-[#1E33E5]/50 font-medium rounded-lg text-sm px-1 ps-2 py-2 text-center items-center dark:focus:ring-[#3b5998]/55 mx-px flex"
             >
               فيس بوك
-              <img src={Facebook} className="w-4 h-4 mr-2 -ml-1" alt="" />
+              <img src={Facebook} className="w-4 h-4 " alt="" />
             </button>
 
             <button
               type="button"
-              className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2"
+              className="text-white pe-3 px-2  py-2 bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mx-px"
             >
               تويتر
               <img src={twitter} className="w-4 h-4 mr-2 -ml-1" alt="" />
@@ -117,7 +117,7 @@ export default function BookDetails() {
 
             <button
               type="button"
-              className="text-white bg-[#53C258] hover:bg-[##53C258]/90 focus:ring-4 focus:outline-none focus:ring-[##53C258]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+              className="text-white pe-3 px-2 py-2 bg-[#53C258] hover:bg-[##53C258]/90 focus:ring-4 focus:outline-none focus:ring-[##53C258]/50 font-medium rounded-lg text-sm  text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mx-px"
             >
               واتساب
               <img src={whatsapp} className="w-4 h-4 mr-2 -ml-1" alt="" />
@@ -125,7 +125,7 @@ export default function BookDetails() {
 
             <button
               type="button"
-              className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+              className="text-white pe-3 px-2  py-2 bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mx-px"
             >
               الايميل
               <svg
@@ -148,6 +148,160 @@ export default function BookDetails() {
 
           {/*  END social media icons  */}
         </main>
+      </div>
+
+      <div className="max-w-screen-xl">
+        <div className=" flex  ms-12">
+          <h1 className="text-black text-xl font-extrabold">تفاصيل الكتاب</h1>
+          <h1 className="text-black  text-xl	 font-extrabold ms-9">الآراء</h1>
+        </div>
+        <div className="bg-white p-8 rounded-md w-4/5">
+          <div>
+            <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+              <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                <table className="min-w-full leading-normal">
+                  <tbody>
+                    {/* 1 */}
+                    <tr>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900  font-extrabold whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* 2 */}
+                    <tr>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 font-extrabold whitespace-no-wrap">
+                              المؤلف
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* 3 */}
+                    <tr>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 font-extrabold whitespace-no-wrap">
+                              رقم ISBN
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* 4 */}
+
+                    <tr>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 font-extrabold whitespace-no-wrap">
+                              تنسيق الكتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* 5 */}
+
+                    <tr>
+                      <td className="px-5 py-4 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-2">
+                            <p className="text-gray-900 font-extrabold whitespace-no-wrap">
+                              تاريخ النشر
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    {/* 6 */}
+                    <tr>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 font-extrabold whitespace-no-wrap">
+                              العلامات
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div className="flex items-center">
+                          <div className="ml-3">
+                            <p className="text-gray-900 whitespace-no-wrap">
+                              عنوان كتاب
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
