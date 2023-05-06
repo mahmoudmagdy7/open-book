@@ -121,3 +121,14 @@ body {
   background: #EBE8FE;
   border-radius: 14px;
 }
+
+
+/* @media (max-width: 414px) {
+  .mobileW{
+   
+    padding: 8px 12px;
+  }
+  .mobileW button:not(:first-child){
+      padding: 8px 12px;
+  }
+} */
