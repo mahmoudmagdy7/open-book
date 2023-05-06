@@ -1,5 +1,5 @@
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home";
 import BookDetails from "./pages/BookDetails";
@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
 
-const route = createBrowserRouter([
+const route = createHashRouter([
   {
     path: "/",
     element: <Layout />,

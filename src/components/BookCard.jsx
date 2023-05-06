@@ -1,29 +1,11 @@
-import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 
 export default function BookCard({ books }) {
-  // async function getSpecificBook(bookId) {
-  //   const options = {
-  //     method: "GET",
-  //     url: `https://arabic-books-library.p.rapidapi.com${bookId}`,
-  //     headers: {
-  //       "X-RapidAPI-Key": "62e88e006amshab876c246db80e1p1d231ajsn3468df23ee80",
-  //       "X-RapidAPI-Host": "arabic-books-library.p.rapidapi.com",
-  //     },
-  //   };
 
-  //   try {
-  //     const { data } = await axios.request(options);
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
   return (
     <>
       <Link to={books?.id} 
-      // onClick={() => getSpecificBook(books?.id)}
       >
         <div className="border rounded-md p-5 text-center book cursor-pointer">
           <img src={books?.img} alt="" className="book-cover rounded-xl" />
