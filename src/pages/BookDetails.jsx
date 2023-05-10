@@ -5,28 +5,158 @@ import Facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
 import download from "../assets/icons/download.svg";
 import show from "../assets/icons/show.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
-export default function BookDetails() {
+export default function BookDetails({ books }) {
+  const { id } = useParams();
+
+  const bookObject = {
+    title: "علم الروبوتات: مقدمة قصيرة جدًّا",
+    author: "آلان وينفيلد",
+    authorId: "/contributors/68194903/",
+    img: "https://downloads.hindawi.org/covers/svg/270x360/60592846.svg?v=5",
+    type: {
+      genre: "تكنولوجيا",
+      url: "technology",
+    },
+    words: "٣٥,١٧٢ كلمة",
+    text: "يُعد علم الروبوتات من التقنيات الأساسية في العالم الحديث. في الآونة الأخيرة، خطت الروبوتات\n      خطواتها الأولى داخل المنازل والمستشفيات وحققت نجاحًا كبيرًا في مجال استكشاف الكواكب، وأصبحت\n      جزءًا راسخًا من عمليات التصنيع وأتمتة المخازن. غير أن الروبوتات أخفقت في الارتقاء إلى مستوى\n      تنبؤات الخمسينيات والستينيات، عندما كان يُعتقد على نطاق واسع أنه بحلول القرن الحادي والعشرين\n      سيكون لدينا روبوتات ذكية تعمل كمساعدين أو رفقاء شخصيين أو زملاء في العمل. يتناول هذا الكتاب من\n      سلسلة «مقدمة قصيرة جدًا» موضوع الروبوتات من خلال النظر إلى الأجزاء التي تشكل معًا روبوتًا. ولا\n      عجب أن يكون لكل من هذه الأجزاء مكافئ حيوي: فكاميرا الروبوت تشبه عيني الحيوان، والكمبيوتر\n      الدقيق بالروبوت يعادل دماغ الحيوان، وما إلى ذلك. ومن خلال تقديم الروبوتات بهذه الطريقة، يبني\n      الكتاب صورة فكرية غير تقنية لماهية الروبوت، وكيفية عمله، ومدى «ذكائه».",
+    downloadLinks: [
+      {
+        downloadTitle: "تحميل بهيئة ePub",
+        downloadImg:
+          "https://www.hindawi.org/content/images/epub-logo-round.svg",
+        downloadLink: "https://downloads.hindawi.org/books/60592846.epub",
+      },
+      {
+        downloadTitle: "تحميل بهيئة PDF",
+        downloadImg:
+          "https://www.hindawi.org/content/images/pdf-logo-round.svg",
+        downloadLink: "https://downloads.hindawi.org/books/60592846.pdf",
+      },
+      {
+        downloadTitle: "تحميل بهيئة KFX",
+        downloadImg:
+          "https://www.hindawi.org/content/images/kindle-logo-round.svg",
+        downloadLink: "https://downloads.hindawi.org/books/60592846.kfx",
+      },
+    ],
+    date: "عام ٢٠١٢.",
+    aboutAuthor:
+      "آلان وينفيلد: نالَ درجة الدكتوراه في مجال الهندسة الإلكترونية من جامعة «هَل» عام ١٩٨٤م، وهو أستاذُ «أخلاقياتِ الروبوتات»، والمدير السابق لوحدة التواصل العلمي بجامعة «غرب إنجلترا» في بريستول، وأستاذ زائر بجامعة يورك. شارَك في تأسيس مختبَر بريستول للروبوتات، وتُركِّز أبحاثه على مجال علوم الروبوتات الذكية وهندستها وأخلاقياتها.",
+    contents: [
+      {
+        title: "شكر وتقدير",
+        id: "/60592846/0.1/",
+      },
+      {
+        title: "تمهيد",
+        id: "/60592846/0.2/",
+      },
+      {
+        title: "ما الروبوت؟",
+        id: "/60592846/1/",
+      },
+      {
+        title: "ما تفعله الروبوتات الآن",
+        id: "/60592846/2/",
+      },
+      {
+        title: "الروبوتات الحيوية",
+        id: "/60592846/3/",
+      },
+      {
+        title: "الروبوتات التي تشبه البشر والروبوتات البشرية",
+        id: "/60592846/4/",
+      },
+      {
+        title: "أسراب الروبوتات، والتطور، والتكافل",
+        id: "/60592846/5/",
+      },
+      {
+        title: "مستقبل علم الروبوتات",
+        id: "/60592846/6/",
+      },
+      {
+        title: "مسرد المصطلحات",
+        id: "/60592846/0.3/",
+      },
+      {
+        title: "قراءات إضافية",
+        id: "/60592846/0.4/",
+      },
+      {
+        title: "مصادر الصور",
+        id: "/60592846/0.5/",
+      },
+    ],
+  };
+
+  console.log(id);
+
+  async function getSpecificBook(bookId) {
+    const options = {
+      method: "GET",
+      url: `https://arabic-books-library.p.rapidapi.com/books/${bookId}`,
+      headers: {
+        "X-RapidAPI-Key": "62e88e006amshab876c246db80e1p1d231ajsn3468df23ee80",
+        "X-RapidAPI-Host": "arabic-books-library.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await axios.request(options);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(function () {
+    // getSpecificBook(id)
+  });
+
   return (
     <>
       {/*  Start Grid system*/}
       <div className="pt-24 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2">
         <aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
-          <img
-            className="w-full  m-auto"
-            src={require("../assets/images/book.png")}
-            alt=""
-          />
+          <img className="w-full rounded-md  m-auto" src={bookObject?.img} alt="" />
+
+                {/*  Start STAR  ICON */}
+
+          <div className="rating text-start flex ms-5  mt-5">
+            <div className="star-outer relative me-1 ">
+              <div className="star-inner absolute top-0"></div>
+            </div>
+            <div className="star-outer relative me-1 ">
+              <div className="star-inner absolute top-0"></div>
+            </div>
+            <div className="star-outer relative me-1 ">
+              <div className="star-inner absolute top-0"></div>
+            </div>
+            <div className="star-outer relative me-1 ">
+              <div className="star-inner absolute top-0"></div>
+            </div>
+            <div className="star-outer relative  "></div>
+
+            <span className=" relative ms-5"> 4.0 </span>
+          </div>
+
+           {/*  END  STAR  ICON */}
+
         </aside>
+
+
+
         {/*  Start BOOK  DETAILS */}
 
         <main className=" col-span-6 lg:col-span-5  py-10 ">
           <div className="px-5">
             {" "}
-            <h1 className=" text-3xl flex">عنوان الكتاب</h1>
-            {/*  Start STAR  ICON */}
-            {/*  END  STAR  ICON */}
+            <h1 className=" text-3xl flex"> {bookObject?.title} </h1>
             <p className="pt-5 text-start  ">
               تلخص هذه المقولة ما تسعى مبادرة ض القيام به منذ تأسيسها ثم تسجيلها
               بشكل رسمي كمنظمة تطوعية غير ربحية في ألمانيا. حيث كان الدافع الأول
@@ -41,28 +171,14 @@ export default function BookDetails() {
               2021 والذي نُشر فيه تطبيق حكايات ض 1 على متجر غوغل، كانت النقلة من
               الترجمة إلى التأليف بتركيز على أدب الطفل من خلال المشروع الكبير،
               مشروع حكايات ض 2 المستمر طيلة عام 2022.
+              
+              
+          
             </p>
             {/*  Start BTN BOOK */}
             <div className=" flex justify-end gap-3 mt-5">
-              {/* <div className="rating text-start flex  mt-5">
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative  "></div>
-
-              <span className=" relative ms-5"> 4.0 </span>
-            </div> */}
               <div className=" relative ">
-                <Link>
+                <Link >
                   <button
                     type="button"
                     className=" c-primary bg-[#EBE8FE] inline-flex items-center font-bold rounded-lg text-sm px-3 py-2.5 text-center "
@@ -74,13 +190,13 @@ export default function BookDetails() {
               </div>
 
               <div className=" relative ">
-                <Link>
+                <Link >
                   <button
                     type="button"
                     className="text-green-500 bg-[#DDF5E4] font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
                   >
                     <span>تحميل الكتاب</span>
-                    <span class="fa-solid fa-arrow-down ms-2"></span>{" "}
+                    <span className="fa-solid fa-arrow-down ms-2"></span>{" "}
                   </button>
                 </Link>
               </div>
@@ -150,8 +266,8 @@ export default function BookDetails() {
         </main>
       </div>
 
-      <div className="max-w-screen-xl">
-        <div className=" flex  ms-12">
+      <div className="max-w-screen-lg mx-auto ">
+        <div className=" flex ms-14">
           <h1 className="text-black text-xl font-extrabold">تفاصيل الكتاب</h1>
           <h1 className="text-black  text-xl	 font-extrabold ms-9">الآراء</h1>
         </div>
@@ -177,7 +293,7 @@ export default function BookDetails() {
                         <div className="flex items-center">
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              عنوان كتاب
+                            {bookObject?.title} 
                             </p>
                           </div>
                         </div>
@@ -200,7 +316,7 @@ export default function BookDetails() {
                         <div className="flex items-center">
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              عنوان كتاب
+                            {bookObject?.author}
                             </p>
                           </div>
                         </div>
