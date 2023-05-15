@@ -3,21 +3,26 @@ import line from "../assets/icons/divider.png";
 import whatsapp from "../assets/icons/x30 8.Whatsapp.svg";
 import Facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
-import download from "../assets/icons/download.svg";
-import show from "../assets/icons/show.svg";
 import { Link } from "react-router-dom";
 
 export default function BookDetails() {
   return (
     <>
       {/*  Start Grid system*/}
-      <div className="pt-24 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2">
-        <aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
+      <div className="pt-24 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2 ">
+        <aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2 ">
           <img
             className="w-full  m-auto"
             src={require("../assets/images/book.png")}
             alt=""
           />
+          <div className="border-2 w-fit h-fit p-1 rounded-md border-deep-purple-200 mx-auto mt-3">
+            <img
+              className=" opacity-25"
+              src="http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100"
+              alt=""
+            />
+          </div>
         </aside>
         {/*  Start BOOK  DETAILS */}
 

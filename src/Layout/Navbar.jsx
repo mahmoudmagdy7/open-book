@@ -127,7 +127,7 @@ export default function Navbar() {
             </div>
 
             <div
-              className="search-bar items-center hidden  justify-between md:flex md:order-1  px-4 py-2 border rounded-lg sm:w-full md:w-full mt-3 lg:mt-0 md:mt-0 "
+              className="search-bar items-center  justify-between md:flex md:order-1  px-4 py-2 border rounded-lg sm:w-full md:w-full mt-3 lg:mt-0 md:mt-0 "
               id="mobile-menu"
             >
               {/* search items  */}

@@ -1027,7 +1027,6 @@ export default function Home() {
     console.log("list view acitvated");
   }
 
-  useEffect(function () {}, []);
   return (
     <>
       <main className=" pb-3">

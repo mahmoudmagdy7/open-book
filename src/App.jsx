@@ -5,7 +5,10 @@ import Home from "./pages/Home";
 import BookDetails from "./pages/BookDetails";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
-import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./pages/Dashboard/DashboardLayout";
+import AddBook from "./pages/Dashboard/AddBook";
+import MainDashboard from "./pages/Dashboard/MainDashboard";
+import UsersData from "./pages/Dashboard/UsersData";
 
 const route = createHashRouter([
   {
@@ -15,8 +18,16 @@ const route = createHashRouter([
       { path: "/", element: <Home /> },
       { path: "books/:id", element: <BookDetails /> },
       { path: "profile", element: <Profile /> },
-      { path: "dashboard", element: <Dashboard /> },
       { path: "*", element: <NotFound /> },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <DashboardLayout />,
+    children: [
+      { path: "", element: <MainDashboard /> },
+      { path: "add-book", element: <AddBook /> },
+      { path: "users", element: <UsersData /> },
     ],
   },
 ]);

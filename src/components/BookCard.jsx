@@ -2,12 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function BookCard({ books }) {
-
   return (
     <>
-      <Link to={books?.id} 
-      >
-        <div className="border rounded-md p-5 text-center book cursor-pointer">
+      <Link to={books?.id}>
+        <div className="border rounded-md p-5 text-center book cursor-pointer hover:shadow-lg hover:shadow-gray-200 duration-100 h-full">
           <img src={books?.img} alt="" className="book-cover rounded-xl" />
           <h3 className="text-lg font-bold my-2">{books?.title}</h3>
           <div className="tags c-primary flex items-center justify-center">
