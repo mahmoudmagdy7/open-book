@@ -3,35 +3,30 @@ import line from "../assets/icons/divider.png";
 import whatsapp from "../assets/icons/x30 8.Whatsapp.svg";
 import Facebook from "../assets/icons/facebook.svg";
 import twitter from "../assets/icons/twitter.svg";
+import download from "../assets/icons/download.svg";
+import show from "../assets/icons/show.svg";
 import { Link } from "react-router-dom";
 
-export default function BookDetails() {
   return (
     <>
       {/*  Start Grid system*/}
-      <div className="pt-24 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2 ">
-        <aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2 ">
+      <div className="pt-24 max-w-screen-xl mx-auto grid grid-cols-6 lg:col-span-5 gap-2">
+        <aside className="  col-span-4 md:col-span-2 md:col-start-3 lg:col-span-1 col-start-2">
           <img
             className="w-full  m-auto"
             src={require("../assets/images/book.png")}
             alt=""
           />
-          <div className="border-2 w-fit h-fit p-1 rounded-md border-deep-purple-200 mx-auto mt-3">
-            <img
-              className=" opacity-25"
-              src="http://api.qrserver.com/v1/create-qr-code/?data=HelloWorld!&size=100x100"
-              alt=""
-            />
-          </div>
         </aside>
+
+
+
         {/*  Start BOOK  DETAILS */}
 
         <main className=" col-span-6 lg:col-span-5  py-10 ">
           <div className="px-5">
             {" "}
-            <h1 className=" text-3xl flex">عنوان الكتاب</h1>
-            {/*  Start STAR  ICON */}
-            {/*  END  STAR  ICON */}
+            <h1 className=" text-3xl flex"> {bookObject?.title} </h1>
             <p className="pt-5 text-start  ">
               تلخص هذه المقولة ما تسعى مبادرة ض القيام به منذ تأسيسها ثم تسجيلها
               بشكل رسمي كمنظمة تطوعية غير ربحية في ألمانيا. حيث كان الدافع الأول
@@ -46,28 +41,14 @@ export default function BookDetails() {
               2021 والذي نُشر فيه تطبيق حكايات ض 1 على متجر غوغل، كانت النقلة من
               الترجمة إلى التأليف بتركيز على أدب الطفل من خلال المشروع الكبير،
               مشروع حكايات ض 2 المستمر طيلة عام 2022.
+              
+              
+          
             </p>
             {/*  Start BTN BOOK */}
             <div className=" flex justify-end gap-3 mt-5">
-              {/* <div className="rating text-start flex  mt-5">
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative me-1 ">
-                <div className="star-inner absolute top-0"></div>
-              </div>
-              <div className="star-outer relative  "></div>
-
-              <span className=" relative ms-5"> 4.0 </span>
-            </div> */}
               <div className=" relative ">
-                <Link>
+                <Link >
                   <button
                     type="button"
                     className=" c-primary bg-[#EBE8FE] inline-flex items-center font-bold rounded-lg text-sm px-3 py-2.5 text-center "
@@ -79,13 +60,13 @@ export default function BookDetails() {
               </div>
 
               <div className=" relative ">
-                <Link>
+                <Link >
                   <button
                     type="button"
                     className="text-green-500 bg-[#DDF5E4] font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
                   >
                     <span>تحميل الكتاب</span>
-                    <span class="fa-solid fa-arrow-down ms-2"></span>{" "}
+                    <span className="fa-solid fa-arrow-down ms-2"></span>{" "}
                   </button>
                 </Link>
               </div>
@@ -155,8 +136,8 @@ export default function BookDetails() {
         </main>
       </div>
 
-      <div className="max-w-screen-xl">
-        <div className=" flex  ms-12">
+      <div className="max-w-screen-lg mx-auto ">
+        <div className=" flex ms-14">
           <h1 className="text-black text-xl font-extrabold">تفاصيل الكتاب</h1>
           <h1 className="text-black  text-xl	 font-extrabold ms-9">الآراء</h1>
         </div>
@@ -182,7 +163,7 @@ export default function BookDetails() {
                         <div className="flex items-center">
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              عنوان كتاب
+                            {bookObject?.title} 
                             </p>
                           </div>
                         </div>
@@ -205,7 +186,7 @@ export default function BookDetails() {
                         <div className="flex items-center">
                           <div className="ml-3">
                             <p className="text-gray-900 whitespace-no-wrap">
-                              عنوان كتاب
+                            {bookObject?.author}
                             </p>
                           </div>
                         </div>
