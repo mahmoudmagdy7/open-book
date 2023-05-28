@@ -1,9 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../Context/UserContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
+  const { inc, counter } = useContext(UserContext);
   return (
     <footer className=" text-start text-base">
       <div className="container mx-auto ">
@@ -41,7 +43,7 @@ export default function Footer() {
                   <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-blue-700 hover:bg-gray-200">
                     <i className="fa-brands fa-linkedin"></i>
                   </div>
-                  <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-rose-600 hover:bg-rose-100">
+                  <div className="icon text-xl border hover:border-none rounded-xl w-12 h-12 flex justify-center items-center p-3 mx-1 cursor-pointer text-red-300 hover:bg-red-50">
                     <i className="fa-brands fa-instagram"></i>
                   </div>
                 </div>

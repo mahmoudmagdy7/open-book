@@ -259,7 +259,10 @@ const books = [
 function Items({ currentItems }) {
   return (
     <>
-      <div className=" grid  md:grid-cols-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 my-5 gap-4">
+      <div
+        id="books-container"
+        className=" grid  md:grid-cols-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 my-5 gap-4"
+      >
         {currentItems?.map((book, index) => {
           return <BookCard key={index} books={book} />;
         })}
@@ -347,7 +350,7 @@ export default function PaginatedItems({ itemsPerPage }) {
         nextLabel={nextBtn}
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
-        pageCount={pageCount}
+        pageCount={3}
         previousLabel={previousBtn}
         renderOnZeroPageCount={null}
         containerClassName="pagination-container"

@@ -1,16 +1,49 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import { useFormik } from "formik";
+import React from "react";
 export default function AddBook() {
-  function getDate(e) {
-    console.log(e);
+  const formik = useFormik({
+    initialValues: {
+      bookTitle: "",
+    },
+    onSubmit: addNewBook,
+  });
+  async function addNewBook() {
+    try {
+      let date = new Date();
+      let config = {
+        method: "post",
+        maxBodyLength: Infinity,
+        url: "http://130.61.246.36/api/v1/books",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+        },
+        data: {
+          name: "Book title",
+          description: "book description",
+          tags: ["tag_1", " tag_2"],
+          author: "author name",
+          publishDate: date,
+          ISBN: "ISBN",
+        },
+      };
+      const { data } = await axios(config);
+      console.log(data);
+    } catch (err) {
+      console.log(err.response.data.message);
+    }
   }
-  useEffect(() => {
-    document.getElementById("add-book-li").click();
-  }, []);
+
   return (
     <>
       <div className=" bg-white p-5">
         <div>
-          <form className="flex flex-col gap-5 ">
+          <form
+            onSubmit={formik.handleSubmit}
+            onChange={formik.handleChange}
+            className="flex flex-col gap-5 "
+          >
             <div className="grid grid-flow-col gap-5 container">
               {/* -------- book details ----------  */}
 
@@ -18,12 +51,15 @@ export default function AddBook() {
                 <div className="relative">
                   <input
                     type="text"
-                    id="book-title"
+                    id="bookTitle"
+                    name="bookTitle"
                     className="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray appearance-none focus:outline-none focus:ring-0 focus:border-[#6c5dd3]  peer"
                     placeholder=" "
+                    onChange={formik.handleChange}
+                    value={formik.values.bookTitle}
                   />
                   <label
-                    htmlFor="book-title"
+                    htmlFor="bookTitle"
                     className="cursor-text absolute text-sm text-gray-50000 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1"
                   >
                     عنوان الكتاب
@@ -161,6 +197,7 @@ export default function AddBook() {
             <button
               type="submit"
               className="bg-primary text-white px-4 py-1 rounded-md self-start text-lg"
+              // onClick={addNewBook}
             >
               نشر
             </button>

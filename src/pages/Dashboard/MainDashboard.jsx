@@ -1,11 +1,11 @@
 import { Books, CloudArrowDown, PenNib, Users } from "@phosphor-icons/react";
 import React from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 export default function MainDashboard() {
-  useEffect(() => {
-    document.getElementById("dashboard-li").click();
-  }, []);
+  // useEffect(() => {
+  //   document.getElementById("dashboard-li").click();
+  // }, []);
   return (
     <>
       <section>

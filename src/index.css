@@ -82,22 +82,63 @@ body {
   font-size: 14px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.btn-primary:hover {
+  background-color: #584aaf;
+}
 
 .btn-primary-soft {
   color: var(--c-Primary);
-  background-color: var(--c-Primary-Soft);
+  background-color: var(--c-Grey-03);
   padding: 6px 10px;
   border-radius: 8px;
   font-size: 14px;
+}
+.btn-primary-soft:hover {
+  background-color: var(--c-Grey-02);
 }
 
 .book-cover {
   width: 100%;
 }
 
+/* desktop first  */
+
+.active-view {
+  color: var(--c-Primary);
+}
+.list-view {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
 .list-view .book {
   display: flex;
+  gap: 1rem;
 }
+.list-view .book img {
+  width: 14rem;
+}
+.list-view .book .heading {
+  display: flex;
+}
+.list-view .book h3 {
+  font-size: 1.4rem;
+}
+.list-view .book .rating {
+  align-self: flex-start;
+}
+.list-view .book .rating-count {
+  display: flex;
+}
+.list-view .book .description {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
 /* mobile  */
 @media screen and (max-width: 640px) {
   .search-bar {
@@ -186,7 +227,7 @@ body {
 .dashboard-aside ul li {
   color: var(--c-DarkPurple);
 }
-.dashboard-aside ul li:hover:not(.active) {
+.dashboard-aside ul li:hover:not(.active):not(.disabled) {
   background-color: var(--c-Grey-03);
 }
 .dashboard-aside ul .active {

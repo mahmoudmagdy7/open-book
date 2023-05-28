@@ -1,6 +1,13 @@
+import { Heart, ShieldChevron } from "@phosphor-icons/react";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../Context/UserContext";
+import { useContext } from "react";
+
 export default function Navbar() {
+  /* getting user token from user data context  */
+
+  const { userToken, logOut, userRole } = useContext(UserContext);
   function toggleNav() {
     const mobileMenu = document.getElementById("mobile-menu");
     mobileMenu.classList.toggle("hidden");
@@ -19,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-white border-gray-200 sticky z-50 top-0">
-        <div className=" py-px bg-slate-100 flex justify-center items-center c-primary">
+        <div className=" py-px bg-gray-100 flex justify-center items-center c-primary">
           <p>نسخة تجريبية</p>
           <span className=" mx-2 fa-solid fa-terminal"></span>
         </div>
@@ -36,80 +43,60 @@ export default function Navbar() {
             <div className="flex items-center md:order-2">
               {/* profile shown when user is logged in */}
               {/* ======================================== */}
-              <button
-                className=" hidden mr-3 text-sm bg-gray-300 rounded-lg md:mr-0 focus:ring-1 focus:ring-gray-300"
-                data-dropdown-toggle="user-dropdown"
-              >
-                <span className="sr-only">Open user menu</span>
-                <img
-                  className="w-8 h-8 rounded-lg"
-                  src={require("../assets/images/user-avatar.png")}
-                  alt="user-icon"
-                />
-              </button>
-              <div
-                className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow "
-                id="user-dropdown"
-              >
-                <div className="px-4 py-3">
-                  <span className="block text-sm text-gray-900 ">
-                    Bonnie Green
-                  </span>
-                  <span className="block text-sm  text-gray-500 truncate ">
-                    name@flowbite.com
-                  </span>
-                </div>
-                <ul className="py-2" aria-labelledby="user-menu-button">
-                  <li>
-                    <Link
-                      to="/"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
-                    >
-                      Dashboard
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Settings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Earnings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
-                    >
-                      Sign out
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+
               {/* ======================================== */}
-              <div className="flex items-center justify-between">
-                <button className="btn-primary flex items-center font-semibold me-2 ">
-                  إنشاء حساب
-                  <img
-                    src={require("../assets/icons/user.png")}
-                    alt="user icon"
-                    className="h-4 ms-1"
-                  />
-                </button>
-                <button className="btn-primary-soft flex items-center font-semibold ">
-                  دخول
-                </button>
-              </div>
+              {!userToken ? (
+                <div className="flex items-center justify-between">
+                  <button className="btn-primary flex items-center font-semibold me-2 ">
+                    <Link to="/register"> إنشاء حساب</Link>
+
+                    <img
+                      src={require("../assets/icons/user.png")}
+                      alt="user icon"
+                      className="h-4 ms-1"
+                    />
+                  </button>
+                  <button className="btn-primary-soft flex items-center font-semibold ">
+                    <Link to="/login">دخول</Link>
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center justify-between gap-3">
+                  {localStorage.getItem("userRole") === "admin" ? (
+                    <Link
+                      to={"/dashboard"}
+                      className="relative border rounded-lg p-1.5 hover:bg-gray-100 text-green-700"
+                    >
+                      <ShieldChevron size={24} weight="fill" />{" "}
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+                  <figure className="bg-gray-300 relative inline-block h-9 w-9 rounded-lg object-cover object-center overflow-hidden">
+                    <img
+                      className="h-full opacity-20"
+                      alt="user avatar placeholder"
+                      src={require("../assets/images/user-avatar.png")}
+                    />
+                  </figure>
+                  <div>
+                    <button className="relative border rounded-lg p-1.5 hover:bg-gray-100 ">
+                      <span className="absolute bg-[#6c5dd3] text-white px-2 py-1 text-xs font-bold rounded-full -top-3 -end-3">
+                        5
+                      </span>
+                      <Heart size={24} />
+                    </button>
+                  </div>
+                  <button
+                    onClick={logOut}
+                    className="btn-primary-soft flex items-center font-semibold "
+                  >
+                    خروج
+                  </button>
+                </div>
+              )}
+
               <button
-                // data-collapse-toggle="mobile-menu"
                 onClick={toggleNav}
                 className="inline-flex items-center p-2 ms-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-50"
               >
@@ -127,7 +114,7 @@ export default function Navbar() {
             </div>
 
             <div
-              className="search-bar items-center  justify-between md:flex md:order-1  px-4 py-2 border rounded-lg sm:w-full md:w-full mt-3 lg:mt-0 md:mt-0 "
+              className="search-bar items-center hidden  justify-between md:flex md:order-1  px-4 py-2 border rounded-lg sm:w-full md:w-full mt-3 lg:mt-0 md:mt-0 "
               id="mobile-menu"
             >
               {/* search items  */}
