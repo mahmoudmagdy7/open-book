@@ -5,7 +5,7 @@ export default function BookCard({ books }) {
   return (
     <>
       <Link to={books?.id}>
-        <div className="book border bg-gray-200 rounded-md p-5 text-center  cursor-pointer hover:shadow-lg hover:shadow-gray-200 duration-100 h-full">
+        <div className="book border  rounded-md p-5 text-center  cursor-pointer hover:shadow-lg hover:shadow-gray-200 duration-100 h-full">
           <img src={books?.img} alt="" className="book-cover rounded-xl" />
           <div className="flex flex-col gap-2">
             <div className="heading ">

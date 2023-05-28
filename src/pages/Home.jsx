@@ -102,7 +102,6 @@ export default function Home() {
             <div className="">
               <PaginatedItems itemsPerPage={20} />
             </div>
-            <Toaster />
           </section>
         </div>
       </main>
